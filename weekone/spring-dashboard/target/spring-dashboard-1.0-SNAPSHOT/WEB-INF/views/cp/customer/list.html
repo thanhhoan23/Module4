@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>List Customer</title>
+  <th:block th:replace="/cp/layout/head :: head"/>
+</head>
+<body _c_t_common="1" _c_t_j1="1">
+<!-- Begin page -->
+<div id="wrapper">
+  <!-- Topbar Start -->
+  <th:block th:replace="/cp/layout/navbar-custom :: navbar-custom"/>
+  <!-- end Topbar -->
+
+  <!-- ========== Left Sidebar Start ========== -->
+  <th:block th:replace="/cp/layout/left-side-menu :: left-side-menu"/>
+  <!-- Left Sidebar End -->
+
+  <!-- ============================================================== -->
+  <!-- Start Page Content here -->
+  <!-- ============================================================== -->
+
+  <div class="content-page">
+    <div class="content">
+
+      <!-- Start Content-->
+      <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+          <div class="col-12">
+            <div class="page-title-box">
+              <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                  <li class="breadcrumb-item"><a href="javascript: void(0);">Minton</a></li>
+                  <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+              </div>
+              <h4 class="page-title">Welcome !</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card-box">
+              <h4 class="header-title" style="padding-left: 10px"> List Customer</h4>
+              <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                  <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Balance</th>
+                      <th class="text-center">Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <th:block th:each="item : ${customers}">
+<!--                    <tr>-->
+<!--                      <th th:text="${item.getId()}"></th>-->
+<!--                      <th th:text="${item.getFullName()}"></th>-->
+<!--                      <th th:text="${item.getEmail()}"></th>-->
+<!--                      <th th:text="${item.getPhone()}"></th>-->
+<!--                      <th th:text="${item.getAddress()}"></th>-->
+<!--                      <th th:text="${item.getBalance()}"></th>-->
+<!--                    </tr>-->
+                    <tr>
+                      <th th:text="${item.id}"></th>
+                      <th th:text="${item.fullName}"></th>
+                      <th th:text="${item.email}"></th>
+                      <th th:text="${item.phone}"></th>
+                      <th th:text="${item.address}"></th>
+                      <th th:text="${item.balance}"></th>
+                        <th><a th:href="@{/cp/customer/edit/__${item.id}__}">
+                            <button class="btn btn-bordered-info">
+                                <i class=" fas fa-pencil-alt"></i>
+                            </button>
+                        </a></th>
+                        <th><a th:href="@{/cp/customer/delete/__${item.id}__}">
+                            <button class="btn btn-bordered-danger">
+                               <i class=" fas fa-trash-alt"></i>
+                            </button>
+                        </a></th>
+                        <th><a th:href="@{/cp/customer/view/__${item.id}__}">
+                            <button class="btn btn-bordered-success">
+                                <i class=" far fa-grin-tongue-wink"></i>
+                            </button>
+                        </a></th>
+                    </tr>
+                  </th:block>
+                  </tbody>
+                </table>
+              </div> <!-- end table-responsive-->
+
+            </div> <!-- end card-box -->
+          </div>
+        </div>
+        <!-- end page title -->
+      </div> <!-- container -->
+
+    </div> <!-- content -->
+
+    <!-- Footer Start -->
+    <th:block th:replace="/cp/layout/footer :: footer"/>
+    <!-- end Footer -->
+
+  </div>
+</div>
+<!-- END wrapper -->
+
+<!-- Right Sidebar -->
+<th:block th:replace="/cp/layout/right-bar :: right-bar"/>
+<!-- /Right-bar -->
+
+<!-- Right bar overlay-->
+<div class="rightbar-overlay"></div>
+
+<!-- Vendor js -->
+<script src="/assets/js/vendor.min.js"></script>
+
+<script src="/assets/libs/jquery-knob/jquery.knob.min.js"></script>
+<script src="/assets/libs/peity/jquery.peity.min.js"></script>
+
+<!-- Sparkline charts -->
+<!-- init js -->
+<script src="/assets/js/pages/dashboard-1.init.js"></script>
+
+<!-- App js -->
+<script src="/assets/js/app.min.js"></script>
+
+<!-- Code injected by live-server -->
+</body>
+</html>

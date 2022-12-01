@@ -1,0 +1,66 @@
+<th:block th:fragment="left-side-menu">
+<div class="left-side-menu">
+
+  <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 210px;"><div class="slimscroll-menu" style="overflow: hidden; width: auto; height: 210px;">
+
+    <!--- Sidemenu -->
+    <div id="sidebar-menu" class="mm-active">
+
+      <ul class="metismenu mm-show" id="side-menu">
+
+        <li class="menu-title">Navigation</li>
+
+        <li class="mm-active">
+          <a href="javascript: void(0);" class="waves-effect active">
+            <i class="remixicon-dashboard-line"></i>
+            <span class="badge badge-pink badge-pill float-right">2</span>
+            <span> Dashboards </span>
+          </a>
+          <ul class="nav-second-level mm-collapse mm-show" aria-expanded="false">
+            <li class="mm-active">
+              <a href="/cp/customer/list" class="active">List Customer </a>
+            </li>
+            <li>
+              <a href="/cp/customer/create">Create Customer</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="javascript: void(0);" class="waves-effect">
+            <i class="remixicon-stack-line"></i>
+            <span> Apps </span>
+            <span class="menu-arrow"></span>
+          </a>
+          <ul class="nav-second-level mm-collapse" aria-expanded="false">
+            <li>
+              <a href="apps-kanbanboard.html">Kanban Board</a>
+            </li>
+            <li>
+              <a href="apps-companies.html">Companies</a>
+            </li>
+            <li>
+              <a href="apps-calendar.html">Calendar</a>
+            </li>
+            <li>
+              <a href="apps-filemanager.html">File Manager</a>
+            </li>
+            <li>
+              <a href="apps-tickets.html">Tickets</a>
+            </li>
+            <li>
+              <a href="apps-team.html">Team Members</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+    <!-- End Sidebar -->
+    <div class="clearfix"></div>
+
+  </div><div class="slimScrollBar" style="background: rgb(158, 165, 171); width: 8px; position: absolute; top: 5px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 48.2495px;"></div><div class="slimScrollRail" style="width: 8px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+  <!-- Sidebar -left -->
+
+</div>
+</th:block>
